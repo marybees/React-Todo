@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      task: '',
+      task: 'Take out the grabage',
       id: Date.now(),
       completed: false
     };
