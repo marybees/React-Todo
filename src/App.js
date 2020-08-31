@@ -15,14 +15,14 @@ class App extends React.Component {
       completed: false
     };
 
-    addItem = (itemName) => {
-      const newItem = {
-        task: itemName,
+    addTodo = (todoName) => {
+      const newTodo = {
+        task: todoName,
         id: new Date(),
         completed: false
       };
       this.setState({
-        chores: [...this.state.chores, newItem]
+        todo: [...this.state.todo, newTodo]
       });
     };
 
@@ -31,11 +31,9 @@ class App extends React.Component {
       <div className="App">
         <div className="header">
           <h1>To Do List</h1>
-          <TodoForm addItem={this.addItem} />
+          <TodoForm addTodo={this.addTodo} />
         </div>
-        <TodoList
-          groceries={this.state.chores}
-        />
+        <TodoList todo={this.state.todo} />
       </div>
     );
   }
